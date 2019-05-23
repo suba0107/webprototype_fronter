@@ -5,8 +5,8 @@
 
 body {
     margin: 0;
-    overflow-x: hidden;
     background-color: #FAF7F7;
+    overflow-x: hidden
 }
 
 html {
@@ -18,8 +18,59 @@ img {
     width: 100%;
 }
 
+
+
 /*HEADER*/
 
+header {
+    background-color: #EA5045;
+    width: 100vw;
+    height: 10vw;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+}
+
+#logo {
+    background-image: url(svg/logo.svg);
+    width: 15vw;
+    height: 3.8vw;
+    background-size: cover;
+    flex-grow: 2;
+
+}
+
+.right {
+    display: flex;
+    justify-content: space-between;
+    width: 15vw;
+    height: 6vw;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+#profile {
+    background-image: url(svg/profile_white.svg);
+    width: 3.5vw;
+    height: 3.5vw;
+    background-size: cover;
+}
+
+
+
+#menuknap {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#menu.hidden {
+    transform: translateX(0);
+    opacity: 1;
+    display: none;
+}
 
 
 /*LOGIN*/
@@ -205,5 +256,85 @@ header #login {
     border-style: solid;
     border-color: #EA5045;
     background-color: #EA5045;
+
+}*/
+
+#frontpage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0.5rem;
+    position: relative;
+    align-items: center;
+
+}
+
+.box {
+
+    /* width: 29vw;
+    height: 29vw;
+    margin: 0.4rem;*/
+
+
+}
+
+.row {
+    display: flex;
+    width: 100vw;
+
+
+
+}
+
+.col {
+    position: relative;
+
+    margin: 5px;
+    background-color: #ffffff;
+    height: 29vw;
+    width: 29vw;
+}
+
+
+
+#techlounge {
+    position: relative;
+    margin: 5px;
+    background-color: #ffffff;
+    width: calc(58vw + 10px);
+
+
+}
+
+
+
+.row1 {
+    display: flex;
+}
+
+
+#aktuelt {
+    width: calc(58vw + 10px);
+    height: 60vw;
+    background-color: #ffffff;
+    margin: 5px;
+}
+
+#soeg {
+    margin-bottom: 10px;
+
+}
+
+#afleveringer {}
+
+
+/*#techlounge {
+    flex-grow: 2;
+    background-color: #ffffff;
+    width: 58vw;
+    height: 29vw;
+    margin: 0.4rem;
+    flex-basis: 334;
+
 
 }*/
