@@ -1,11 +1,209 @@
+/*OVERORDNET*/
 * {
     box-sizing: border-box;
 }
 
-
 body {
     margin: 0;
     overflow-x: hidden;
+    background-color: #FAF7F7;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/*HEADER*/
+
+
+
+/*LOGIN*/
+#login {
+    display: flex;
+    flex-direction: column;
+    font-family: 'arial', sans-serif;
+    display: none;
+
+}
+
+/*header login*/
+
+header #login {
+    background-color: #EA5045;
+    width: 100vw;
+    height: 35vw;
+    display: flex;
+    align-items: center;
+}
+
+#logo_login {
+    background-image: url(svg/logo.svg);
+    width: 25vw;
+    height: 6.3vw;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+/*inputfelter*/
+
+#login_form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.inputbox {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 13vw;
+
+}
+
+.inputbox input {
+    border-radius: 50px;
+    border-color: #EA5045;
+    padding: 5vw;
+    margin: 2vw;
+    border-style: none;
+    background-color: white;
+    width: 65vw;
+    height: 7vw;
+    color: #EA5045;
 
 
 }
+
+
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #EA5045;
+    font-weight: bold;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #EA5045;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #EA5045;
+    font-weight: bold;
+}
+
+/*Glemt password og husk*/
+.container1 {
+    display: flex;
+    justify-content: flex-end;
+    width: 65vw;
+    margin: 0 auto;
+
+}
+
+
+
+.psw a {
+    text-align: right;
+    color: #EA5045;
+    font-size: 0.9rem;
+
+
+
+}
+
+
+
+/*login-knapper*/
+
+
+#login .container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20vw;
+}
+
+#login hr {
+    border-style: none;
+    width: 4vw;
+    height: 0.5vw;
+    background-color: #DEDCDB;
+    border-radius: 50px;
+    margin-bottom: 4vw;
+}
+
+.loginbtn {
+    border-radius: 50px;
+    background-color: #EA5045;
+    color: #ffffff;
+    border-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 2vw;
+    margin: 2vw;
+    width: 65vw;
+    height: 10vw;
+
+
+
+}
+
+
+.facebookbtn {
+    border-radius: 50px;
+    background-color: #FAF7F7;
+    color: #EA5045;
+    border-style: solid;
+    border-color: #EA5045;
+    margin-top: 2vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 2vw;
+    margin: 2vw;
+    width: 65vw;
+    height: 10vw;
+
+}
+
+#login .txt {
+    margin: 0 auto;
+    position: relative;
+}
+
+.fblogo {
+    background-image: url(svg/fb.svg);
+    width: 3vw;
+    height: 3vw;
+    background-size: cover;
+}
+
+/*
+.rmb {
+    text-align: right;
+    color: #EA5045;
+    font-size: 0.9rem;
+
+}
+
+.rmb .checkbox {
+    border-style: solid;
+    border-color: #EA5045;
+    background-color: #EA5045;
+
+}*/

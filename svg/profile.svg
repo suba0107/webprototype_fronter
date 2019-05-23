@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.57" height="24.57" viewBox="0 0 24.57 24.57">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="24.57" height="24.57" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Profile" clip-path="url(#clip-path)">
+    <path id="Union_1" data-name="Union 1" d="M0,24.57V21.5c0-3.379,5.528-6.143,12.285-6.143S24.57,18.12,24.57,21.5V24.57ZM6.142,6.143a6.142,6.142,0,1,1,6.143,6.142A6.143,6.143,0,0,1,6.142,6.143Z" fill="#ea847c"/>
+  </g>
+</svg>
