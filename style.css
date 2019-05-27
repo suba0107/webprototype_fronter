@@ -1,6 +1,7 @@
 /*OVERORDNET*/
 * {
     box-sizing: border-box;
+
 }
 
 body {
@@ -22,18 +23,18 @@ img {
 
 /*HEADER*/
 
-header {
+.header {
     background-color: #EA5045;
-    width: 100vw;
-    height: 10vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-
-
-
-
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    margin-top: 0;
+    height: 12vw;
 }
 
 #logo {
@@ -41,11 +42,10 @@ header {
     width: 15vw;
     height: 3.8vw;
     background-size: cover;
-    flex-grow: 2;
 
 }
 
-.right {
+#right {
     display: flex;
     justify-content: space-between;
     width: 15vw;
@@ -56,10 +56,11 @@ header {
 
 #profile {
     background-image: url(svg/profile_white.svg);
-    width: 4vw;
-    height: 4vw;
+    width: 4.5vw;
+    height: 4.5vw;
     background-size: cover;
     margin-top: 0.1rem;
+
 
 }
 
@@ -70,20 +71,117 @@ header {
 
 /*NAVIGATION / BURGERMENU*/
 
+/*
+.hidden {
+    display: none;
+}
+*/
+
+
+
+/* unvisited link */
+/*
+header nav a:link {
+    color: #f2e4d7;
+}
+*/
+
+/* visited link */
+/*header nav a:visited {
+    color: #f2e4d7;
+}*/
+
+/* mouse over link */
+/*header nav a:hover {
+    color: #ff3e2c;
+}*/
+
+/* selected link */
+/*header nav a:active {
+    color: #f2e4d7;
+}*/
+
 #menuknap {
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-family: 'canada-type-gibson', sans-serif;
-    font-weight: bold;
+    font-weight: normal;
+    z-index: 900;
+    margin: 0;
+    display: inline-block;
+}
+
+
+nav #menu {
+    height: 100%;
+    width: 100%;
+    background-color: #3F3140;
+    display: flex;
+    top: 0;
+    left: 0;
+    position: fixed;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: -1;
+
 
 }
+
+.logo_menu {
+    background-image: url(svg/logo.svg);
+    width: 20vw;
+    height: 5.1vw;
+    margin-bottom: 3rem;
+    background-size: cover;
+    margin-top: 3rem;
+
+
+}
+
+header #menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    line-height: 2rem;
+    top: 1;
+    margin-top: 4rem;
+
+
+
+}
+
+header nav a {
+    font-size: 1rem;
+    font-family: 'canada-type-gibson', sans-serif;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
+    text-decoration: none;
+    color: #F58E81;
+}
+
+#signout {
+    background-color: #F58E81;
+    z-index: 500;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 13vw;
+    font-family: 'arial', sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 
 .hidden {
     transform: translateX(100%);
     opacity: 0;
-    display: none;
-
 
 }
 
@@ -92,7 +190,7 @@ header {
     display: flex;
     flex-direction: column;
     font-family: 'arial', sans-serif;
-    display: none;
+
 
 }
 
@@ -279,7 +377,7 @@ header #login {
     justify-content: center;
     position: relative;
     align-items: center;
-    margin: 0.5rem auto;
+    margin: 14vw auto;
 }
 
 .box {
