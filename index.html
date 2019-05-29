@@ -9,156 +9,52 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/ntl1scx.css">
 </head>
-<header>
-    <div class="header">
-        <a href="index.html">
-            <div id="logo">
-            </div>
-        </a>
-        <div id="right">
-            <div id="profile"></div>
 
-            <div id="menuknap">
-                <div id="ikon">☰</div>
-                <nav>
 
-                    <div id="menu" class="hidden">
-                        <div id="menu-nav">
-                            <div class="logo_menu"></div>
-                            <a href="#">Akuelt</a>
-                            <a href="skema.html">Skema</a>
-                            <a href="afleveringer.html">Afleveringer</a>
-                            <a href="materialer.html">Materialer</a>
-                            <a href="#">Chat</a>
-                            <a href="#">Instillinger</a>
-                        </div>
-                        <div id="signout">Sign out</div>
-                    </div>
 
-                </nav>
-            </div>
-        </div>
-    </div>
-
-</header>
-
-<section id="login">
+<body id="login">
     <header>
-        <div id="logo_login"></div>
+        <div class="logo_login"></div>
     </header>
+
     <form id="login_form">
 
         <div class="inputbox">
             <input type="text" placeholder="E-mail..." name="uname" required>
             <input type="password" placeholder="Password..." name="psw" required>
         </div>
+
+
+
+
         <div class="container1">
-            <div class="psw"> <a href="#"> Forgot password?</a>
+            <div class="rmb">
+                Remember me
+                <input type="checkbox" checked="checked" name="remember">
+                <div class="checkmark"></div>
+            </div>
+            <div class="psw"> <a id="forgot-link" href="forgot.html"> Forgot password?</a>
             </div>
 
         </div>
 
 
-        <div class="container">
+        <div id="container_login">
             <hr>
-            <button class="loginbtn" type="submit">Continue</button>
+            <a id="login-frontpage" href="frontpage.html" class="loginbtn" type="submit">Continue</a>
 
-            <button type="button" class="facebookbtn">
+            <a href="frontpage.html" id="fbbtn" type="button" class="facebookbtn">
                 <div class="fblogo"></div>
                 <div class="txt">Login with Facebook </div>
-            </button>
+            </a>
 
-            <!--    <div class="rmb">
-                Remember me
-                <input type="checkbox" checked="checked" name="remember">
-                <div class="checkmark"></div>
-            </div>
--->
+
 
         </div>
 
 
     </form>
-</section>
-
-<section id="frontpage">
-    <div class="row">
-        <a href="materialer.html">
-            <div id="materialer" class="col">
-                <img src="svg/folder.svg" alt="mappe">
-                <div class="text">Materialer</div>
-            </div>
-        </a>
-        <a href="skema.html">
-            <div id="skema" class="col">
-                <img src="svg/calendar.svg" alt="skema">
-                <div class="text">Skema</div>
-            </div>
-        </a>
-        <div id="notifikationer" class="col">
-            <img src="svg/alert.svg" alt="notifikation">
-            <div class="text">Notifikationer</div>
-        </div>
-    </div>
-    <div class="row">
-        <div id="techlounge" class="col">
-            <div class="text">Techlounge</div>
-        </div>
-        <div id="mail" class="col">
-            <img src="svg/messages.svg" alt="mail">
-            <div class="text">Mail</div>
-        </div>
-    </div>
-    <div class="row">
-        <div id="favoritter" class="col">
-            <img src="svg/bookmark.svg" alt="bookmark">
-            <div class="text">Favoritter</div>
-        </div>
-        <div id="grupper" class="col">
-            <img src="svg/group.svg" alt="grupper">
-            <div class="text">Grupper</div>
-        </div>
-        <div id="chat" class="col">
-            <img src="svg/chat.svg" alt="message">
-            <div class="text">Mail</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col1">
-            <div id="soeg" class="col">
-                <img src="svg/search.svg" alt="søg">
-                <div class="text">Søg</div>
-            </div>
 
 
-            <div id="afleveringer" class="col">
-                <img src="svg/upload.svg" alt="upload">
-                <div class="text">Afleveringer</div>
-            </div>
-        </div>
-        <div class="col3">
-            <div id="aktuelt" class="col">
-                <div class="text">Aktuelt</div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div id="x1" class="col">
-            <img src="svg/questionmark.svg" alt="Spørgsmålstegn">
-            <div class="text">X</div>
-        </div>
-        <div id="x2" class="col">
-            <img src="svg/questionmark.svg" alt="Spørgsmålstegn">
-            <div class="text">X</div>
-        </div>
-        <div id="x3" class="col">
-            <img src="svg/questionmark.svg" alt="Spørgsmålstegn">
-            <div class="text">X</div>
-        </div>
-    </div>
-
-</section>
-
-<body>
     <script src="script.js"></script>
 </body></html>

@@ -9,61 +9,215 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/ntl1scx.css">
 </head>
-<header>
-    <div class="header">
-        <a href="index.html">
-            <div id="logo">
-            </div>
-        </a>
-        <div id="right">
-            <div id="profile"></div>
 
-            <div id="menuknap">
-                <div id="ikon">☰</div>
-                <nav>
+<body id="afleveringer-page">
+    <header>
+        <div class="header">
+            <a href="frontpage.html">
+                <div id="logo">
+                </div>
+            </a>
+            <div id="right">
+                <div id="profile"></div>
 
-                    <div id="menu" class="hidden">
-                        <div id="menu-nav">
-                            <div class="logo_menu"></div>
-                            <a href="#">Akuelt</a>
-                            <a href="skema.html">Skema</a>
-                            <a href="afleveringer.html">Afleveringer</a>
-                            <a href="materialer.html">Materialer</a>
-                            <a href="#">Chat</a>
-                            <a href="#">Instillinger</a>
+                <div id="menuknap">
+                    <div id="ikon">☰</div>
+                    <nav>
+
+                        <div id="menu" class="hidden">
+                            <div id="menu-nav">
+                                <div class="logo_menu"></div>
+                                <a href="#">Akuelt</a>
+                                <a href="skema.html">Skema</a>
+                                <a href="afleveringer.html">Afleveringer</a>
+                                <a href="materialer.html">Materialer</a>
+                                <a href="#">Chat</a>
+                                <a href="#">Instillinger</a>
+                            </div>
+                            <div id="signout">Sign out</div>
                         </div>
-                        <div id="signout">Sign out</div>
-                    </div>
 
-                </nav>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
 
-</header>
-<h1>Afleveringer</h1>
-<section id="next">
-    <h2>Næste aflevering</h2>
-    <div class="afleverbox">
-        <h3>Aflever</h3>
-        <p>Tirsdag d. 21/5/19 inden kl. 22:00</p>
-    </div>
-</section>
-
-<section id="upload">
-    <h2>Upload aflevering</h2>
-    <div class="afleverbox"></div>
-</section>
-
-<section id="previous">
-    <h2>Tidligere afleveringer</h2>
-    <div class="afleverbox"></div>
-    <div class="afleverbox"></div>
-    <div class="afleverbox"></div>
-    <div class="afleverbox"></div>
-</section>
+    </header>
 
 
-<body>
+    <section id="afleveringer-section">
+        <h1>Afleveringer</h1>
+        <section id="next">
+            <h2>Næste aflevering</h2>
+            <div class="afleverbox">
+                <h3>F19- 04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                <p>Det er vigtigt at du fokuserer på...</p>
+                <div class="icon">
+                    <div id="clip"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="upload">
+            <h2>Upload aflevering</h2>
+            <div class="afleverbox">
+                <h3>Aflever</h3>
+                <p>Tirsdag d. 21/5/19 inden kl. 22:00</p>
+                <div class="icon">
+                    <button id="uploadbtn"></button>
+                    <div id="myModal" class="modal collapse-hide">
+                        <div id="modal-indhold" class="modal-content">
+                            <div id="closebtn" class="close">&times;</div>
+                            <h1>04.02.01 - Webprototype</h1>
+                            <form id="aflevering-modal">
+                                <div class="navn input-aflevering">
+                                    <p>Navn*:</p>
+                                    <div class="input"><input type="text" name="fullname" required>
+                                    </div>
+                                </div>
+                                <div class="titel input-aflevering">
+                                    <p>Titel*:</p>
+                                    <div class="input">
+                                        <input type="text" name="fullname" required>
+                                    </div>
+                                </div>
+                                <div class="link input-aflevering">
+                                    <p>Link: </p>
+                                    <div class="input"> <input type="text" name="link">
+                                    </div>
+                                </div>
+
+                                <div class="uploadfile input-aflevering">
+                                    <p>eller</p>
+                                    <div class="btn_upload">
+                                        <div class="upload-btn-wrapper">
+                                            <input type="file" name="myfile" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <button type="button" id="send" class="uploadnowbtn">Upload</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="previous">
+            <h2>Tidligere afleveringer</h2>
+            <div class="afleverbox">
+                <div id="outerbox1" class="outerbox">
+                    <div class="indhold">
+                        <h3>Tema 1</h3>
+                        <p>Grundlæggende Web</p>
+                    </div>
+                    <div class="expandbtn"></div>
+                </div>
+                <div class="collapse-hide">
+                    <div class="collapse">
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="afleverbox">
+                <div id="outerbox2" class="outerbox">
+                    <div class="indhold">
+                        <h3>Tema 2</h3>
+                        <p>Grundlæggende Animation</p>
+                    </div>
+                    <div class="expandbtn"></div>
+                </div>
+                <div class="collapse-hide">
+                    <div class="collapse">
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="afleverbox">
+                <div id="outerbox3" class="outerbox">
+                    <div class="indhold">
+                        <h3>Tema 3</h3>
+                        <p>Grundlæggende Indhold</p>
+                    </div>
+                    <div class="expandbtn"></div>
+                </div>
+                <div class="collapse-hide">
+                    <div class="collapse">
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="afleverbox">
+                <div id="outerbox4" class="outerbox">
+                    <div class="indhold">
+                        <h3>Tema 4</h3>
+                        <p>Grundlæggende UX</p>
+                    </div>
+
+                    <div class="expandbtn"></div>
+                </div>
+                <div class="collapse-hide">
+                    <div class="collapse">
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                        <div class="collapsebox">
+                            <h3>04.01.01 - Opgavebeskrivelse - Design Sprint</h3>
+                            <p>Filnavn</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+
     <script src="script.js"></script>
 </body></html>

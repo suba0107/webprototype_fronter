@@ -20,8 +20,27 @@ img {
 }
 
 
+/* The animation code */
+@keyframes slide {
+    0% {}
+
+    100% {
+        transform: translateX(100%)
+    }
+}
+
+/* The element to apply the animation to */
+.slide {
+    animation-name: slide;
+    animation-duration: 2s;
+}
+
 
 /*HEADER*/
+
+header {
+    width: 100%;
+}
 
 .header {
     background-color: #EA5045;
@@ -196,7 +215,7 @@ header nav a {
 
 /*header login*/
 
-header #login {
+#login header {
     background-color: #EA5045;
     width: 100vw;
     height: 35vw;
@@ -204,7 +223,7 @@ header #login {
     align-items: center;
 }
 
-#logo_login {
+.logo_login {
     background-image: url(svg/logo.svg);
     width: 25vw;
     height: 6.3vw;
@@ -269,6 +288,8 @@ header #login {
     justify-content: flex-end;
     width: 65vw;
     margin: 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
 
 }
 
@@ -288,7 +309,7 @@ header #login {
 /*login-knapper*/
 
 
-#login .container {
+#container_login {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -318,6 +339,10 @@ header #login {
     margin: 2vw;
     width: 65vw;
     height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 
 
 
@@ -341,6 +366,7 @@ header #login {
     margin: 2vw;
     width: 65vw;
     height: 10vw;
+    text-decoration: none;
 
 }
 
@@ -356,20 +382,176 @@ header #login {
     background-size: cover;
 }
 
-/*
+
 .rmb {
     text-align: right;
-    color: #EA5045;
+    color: #707070;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 
 }
 
-.rmb .checkbox {
+
+
+/********FORGOT PASSWORD***********/
+
+#forgot {
+    display: flex;
+    flex-direction: column;
+    font-family: 'arial', sans-serif;
+
+
+}
+
+/*header login*/
+
+#forgot header {
+    background-color: #EA5045;
+    width: 100vw;
+    height: 35vw;
+    display: flex;
+    align-items: center;
+}
+
+.logo_login {
+    background-image: url(svg/logo.svg);
+    width: 25vw;
+    height: 6.3vw;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+/*inputfelter*/
+
+#forgot_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.inputbox {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10vw;
+
+}
+
+.inputbox input {
+    border-radius: 50px;
+    border-color: #EA5045;
+    padding: 5vw;
+    margin: vw;
+    border-style: none;
+    background-color: white;
+    width: 65vw;
+    height: 7vw;
+    color: #EA5045;
+
+
+}
+
+
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #EA5045;
+    font-weight: bold;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #EA5045;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #EA5045;
+    font-weight: bold;
+}
+
+
+
+/*login-knapper*/
+
+
+#container_forgot {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10vw;
+}
+
+#forgot hr {
+    border-style: none;
+    width: 4vw;
+    height: 0.5vw;
+    background-color: #DEDCDB;
+    border-radius: 50px;
+    margin-bottom: 4vw;
+}
+
+#submitbtn {
+    border-radius: 50px;
+    background-color: #EA5045;
+    color: #ffffff;
+    border-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 2vw;
+    margin: 2vw;
+    width: 65vw;
+    height: 10vw;
+}
+
+
+.backbtn {
+    border-radius: 50px;
+    background-color: #FAF7F7;
+    color: #EA5045;
     border-style: solid;
     border-color: #EA5045;
-    background-color: #EA5045;
+    margin-top: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 2vw;
+    margin: 2vw;
+    width: 65vw;
+    height: 10vw;
+    text-decoration: none;
 
-}*/
+}
+
+#forgot .txt {
+    margin: 0 auto;
+    position: relative;
+}
+
+#forgot h1 {
+    color: #F58E81;
+    font-family: 'arial', sans-serif;
+    margin-top: 4rem;
+}
+
+#forgot p {
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 2rem;
+}
+
+/*********************FRONT PAGE************************/
 
 #frontpage {
     display: flex;
@@ -518,3 +700,211 @@ img {
 
 
 }*/
+
+/*************************** AFLEVERINGER ********************/
+
+#afleveringer-page {
+    background-color: #ffffff;
+
+}
+
+#afleveringer-page h2 {
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 1.3rem;
+    color: #EA5045;
+}
+
+#afleveringer-page h3 {
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+}
+
+#afleveringer-page p {
+    font-family: 'canada-type-gibson', sans-serif;
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 500;
+
+}
+
+.afleverbox {
+    background-color: #F2F1F0;
+    width: 90vw;
+    position: relative;
+    margin-bottom: 1rem;
+
+
+}
+
+#upload .afleverbox {
+    padding: 1rem;
+}
+
+#next .afleverbox {
+    padding: 1rem;
+}
+
+#afleveringer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#clip {
+    background-image: url(svg/attachment.svg);
+    width: 5vw;
+    height: 5vw;
+    background-size: cover;
+}
+
+#uploadbtn {
+    background-image: url(svg/upload.svg);
+    width: 5vw;
+    height: 5vw;
+    background-size: cover;
+}
+
+#previous .outerbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.expandbtn {
+    background-image: url(svg/down_arrow.svg);
+    width: 5vw;
+    height: 5vw;
+    background-size: cover;
+}
+
+.collapsebtn {
+    background-image: url(svg/up_arrow.svg);
+    width: 5vw;
+    height: 5vw;
+    background-size: cover;
+
+}
+
+#previous .collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#previous .collapsebox {
+    width: 99%;
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 0.2rem;
+
+}
+
+.collapse-hide {
+    display: none;
+}
+
+
+/* The Modal (background) */
+.modal {
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    background-color: #FAF7F7;
+    background-color: rgba(0, 0, 0, 0.4);
+
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90vw;
+    /* Could be more or less, depending on screen size */
+    margin-top: 9rem;
+    font-family: 'arial', sans-serif;
+    color: #3F3140;
+}
+
+#aflevering-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-aflevering {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+
+.input input {
+    margin-left: 1rem;
+    width: 20rem;
+    height: 2rem;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #707070;
+    border-width: thin;
+}
+
+.uploadnowbtn {
+    border-radius: 50px;
+    background-color: #F58E81;
+    color: #ffffff;
+    border-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 2vw;
+    margin: 2vw;
+    width: 20vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
