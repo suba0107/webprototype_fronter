@@ -2,19 +2,24 @@ window.addEventListener("load", sidenVises);
 
 function sidenVises() {
     console.log("sidenVises");
-    if (document.querySelector("#submitbtn") > 0) {
+
+    let x = document.querySelector("#submitbtn");
+
+    if (!x) {
+
+        document.querySelector("#ikon").addEventListener("click", toggleMenu);
+        document.querySelector("#outerbox1").addEventListener("click", toggleBtn);
+        document.querySelector("#outerbox2").addEventListener("click", toggleBtn);
+
+        document.querySelector("#outerbox3").addEventListener("click", toggleBtn);
+
+        document.querySelector("#outerbox4").addEventListener("click", toggleBtn);
+
+        document.querySelector("#uploadbtn").addEventListener("click", modalAfleveringer);
+
+    } else {
         document.querySelector("#submitbtn").addEventListener("click", resetPassword);
     }
-
-    document.querySelector("#ikon").addEventListener("click", toggleMenu);
-    document.querySelector("#outerbox1").addEventListener("click", toggleBtn);
-    document.querySelector("#outerbox2").addEventListener("click", toggleBtn);
-
-    document.querySelector("#outerbox3").addEventListener("click", toggleBtn);
-
-    document.querySelector("#outerbox4").addEventListener("click", toggleBtn);
-
-    document.querySelector("#uploadbtn").addEventListener("click", modalAfleveringer);
 
 }
 
@@ -74,6 +79,7 @@ function modalClose() {
     console.log("modalClose");
     myModal.classList.add("collapse-hide");
     myModal.classList.remove("modal");
+    location.reload();
 
 }
 
@@ -83,9 +89,10 @@ function uploadSucceed() {
     let form = document.getElementById("aflevering-modal");
     modal.removeChild(form);
 
-    /*   document.getElementById("p1").innerHTML = "An email has been sent to your e-mail address. <br> Please check your inbox.";
+    document.getElementById("overskrift").innerHTML = "Submission complete!";
 
-    let parent = document.getElementById("forgot_form");
-    let child = document.getElementById("reset_input");
-    parent.removeChild(child);*/
+    document.getElementById("p-succeed").innerHTML = "You have successfully submitted your assignment! You may close this window.";
+
+
+
 }

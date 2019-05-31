@@ -1,49 +1,87 @@
-/*OVERORDNET*/
+/*-----------------------------------------------------------
+1: Variables
+2: General & Common styling
+3: Header & navigation - mobile
+4: Form styling
+5: Page specific styles
+6: Header & navigation - desktop
+-------------------------------------------------------------*/
+/*-----------------------------------------------------------
+1: Variables & Common styling
+-----------------------------------------------------------*/
+/*Variables*/
+:root {
+    --main-dark: #EA5045;
+    --main-color: #F58E81;
+    --main-light: #ffffff;
+    --purple: #3F3140;
+    --pink: #FFB4AA;
+    --bg: #FAF7F7;
+    --black: #000000;
+    --grey: #707070;
+    --light-grey: #DEDCDB;
+    --light-light-grey: #F2F1F0;
+}
+
+/*---------------------------------------------------------*/
+/*-----------------------------------------------------------
+2: General & Common styling
+-----------------------------------------------------------*/
+
+/*GENERAL*/
 * {
     box-sizing: border-box;
-
 }
 
+/*Background color*/
 body {
     margin: 0;
-    background-color: #FAF7F7;
+    background-color: var(--bg);
     overflow-x: hidden;
+
 }
 
-html {
-    margin: 0;
-    padding: 0;
+/*COMMON STYLING*/
+
+/*horizontal skillestreg*/
+hr {
+    border-style: none;
+    width: 4vw;
+    height: 0.5vw;
+    background-color: var(--light-grey);
+    border-radius: 50px;
+    margin-bottom: 4vw;
 }
 
-img {
-    width: 100%;
-}
-
-
-/* The animation code */
-@keyframes slide {
-    0% {}
-
-    100% {
-        transform: translateX(100%)
-    }
-}
-
-/* The element to apply the animation to */
-.slide {
-    animation-name: slide;
-    animation-duration: 2s;
-}
-
-
-/*HEADER*/
-
+/*---------------------------------------------------------
+3: Header & navigation - mobile
+----------------------------------------------------------*/
+/*GENEREAL HEADER*/
 header {
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
+/*LOGIN PAGE*/
+#login header,
+#forgot header {
+    background-color: var(--main-dark);
+    width: 100vw;
+    height: 35vw;
+}
+
+#logo_login {
+    background-image: url(svg/logo.svg);
+    width: 25vw;
+    height: 6.3vw;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+/*HEADER OTHER PAGES*/
 .header {
-    background-color: #EA5045;
+    background-color: var(--main-dark);
     width: 100%;
     display: flex;
     align-items: center;
@@ -56,14 +94,16 @@ header {
     height: 12vw;
 }
 
-#logo {
+/*logo*/
+/*left side*/
+.logo {
     background-image: url(svg/logo.svg);
     width: 15vw;
     height: 3.8vw;
     background-size: cover;
-
 }
 
+/*right side*/
 #right {
     display: flex;
     justify-content: space-between;
@@ -73,53 +113,23 @@ header {
     margin-right: 1rem;
 }
 
+/*profilikon*/
 #profile {
     background-image: url(svg/profile_white.svg);
     width: 4.5vw;
     height: 4.5vw;
     background-size: cover;
     margin-top: 0.1rem;
-
-
 }
-
-
-
-
-
 
 /*NAVIGATION / BURGERMENU*/
-
-/*
+/*nav, når den ikke er vist - bevæger sig fra højre side*/
 .hidden {
-    display: none;
+    transform: translateX(100%);
+    opacity: 0;
 }
-*/
 
-
-
-/* unvisited link */
-/*
-header nav a:link {
-    color: #f2e4d7;
-}
-*/
-
-/* visited link */
-/*header nav a:visited {
-    color: #f2e4d7;
-}*/
-
-/* mouse over link */
-/*header nav a:hover {
-    color: #ff3e2c;
-}*/
-
-/* selected link */
-/*header nav a:active {
-    color: #f2e4d7;
-}*/
-
+/*Menuknap*/
 #menuknap {
     color: white;
     font-size: 1.7rem;
@@ -130,11 +140,11 @@ header nav a:link {
     display: inline-block;
 }
 
-
+/*Indholdet af menuen*/
 nav #menu {
     height: 100%;
     width: 100%;
-    background-color: #3F3140;
+    background-color: var(--purple);
     display: flex;
     top: 0;
     left: 0;
@@ -143,21 +153,21 @@ nav #menu {
     flex-direction: column;
     justify-content: flex-start;
     z-index: -1;
-
-
+    transition: transform .3s;
+    transform-origin: top left;
 }
 
-.logo_menu {
+/*Logo i menuen*/
+#logo_menu {
     background-image: url(svg/logo.svg);
     width: 20vw;
     height: 5.1vw;
     margin-bottom: 3rem;
     background-size: cover;
     margin-top: 3rem;
-
-
 }
 
+/*Linksene i nav*/
 header #menu-nav {
     display: flex;
     flex-direction: column;
@@ -167,24 +177,23 @@ header #menu-nav {
     line-height: 2rem;
     top: 1;
     margin-top: 4rem;
-
-
-
 }
 
+/*det enkelte link*/
 header nav a {
     font-size: 1rem;
     font-family: 'canada-type-gibson', sans-serif;
     margin: 0.25rem 0;
     padding: 0.25rem 0;
     text-decoration: none;
-    color: #F58E81;
+    color: var(--main-color);
 }
 
+/*log ud-knap*/
 #signout {
-    background-color: #F58E81;
+    background-color: var(--main-color);
     z-index: 500;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 13vw;
@@ -193,53 +202,32 @@ header nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    color: var(--main-light);
+    margin-bottom: 0;
 }
 
-
-
-.hidden {
-    transform: translateX(100%);
-    opacity: 0;
-
+/*---------------------------------------------------------
+4: Form styling
+-------------------------------------------------------------*/
+/*placeholder-text i log in form*/
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: var(--main-dark);
+    font-weight: bold;
 }
 
-/*LOGIN*/
-#login {
-    display: flex;
-    flex-direction: column;
-    font-family: 'arial', sans-serif;
-
-
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--main-dark);
 }
 
-/*header login*/
-
-#login header {
-    background-color: #EA5045;
-    width: 100vw;
-    height: 35vw;
-    display: flex;
-    align-items: center;
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--main-dark);
+    font-weight: bold;
 }
 
-.logo_login {
-    background-image: url(svg/logo.svg);
-    width: 25vw;
-    height: 6.3vw;
-    background-size: cover;
-    margin: 0 auto;
-}
-
-/*inputfelter*/
-
-#login_form {
-    display: flex;
-    flex-direction: column;
-}
-
-
-
+/*Box, der indholder de to input boxe*/
 .inputbox {
     display: flex;
     flex-direction: column;
@@ -247,39 +235,35 @@ header nav a {
     justify-content: center;
     margin: 0 auto;
     margin-top: 13vw;
-
 }
 
+/*input stylet*/
 .inputbox input {
     border-radius: 50px;
-    border-color: #EA5045;
+    border-color: var(--main-dark);
     padding: 5vw;
     margin: 2vw;
     border-style: none;
     background-color: white;
     width: 65vw;
     height: 7vw;
-    color: #EA5045;
-
-
+    color: var(--main-dark);
 }
 
-
-::placeholder {
-    /* Firefox, Chrome, Opera */
-    color: #EA5045;
-    font-weight: bold;
+/*-----------------------------------------------------------5: 5: Page specific styles
+-------------------------------------------------------------*/
+/********************LOGIN*************************/
+#login {
+    display: flex;
+    flex-direction: column;
+    font-family: 'arial', sans-serif;
 }
 
-:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #EA5045;
-}
-
-::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: #EA5045;
-    font-weight: bold;
+/*form*/
+#login_form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
 }
 
 /*Glemt password og husk*/
@@ -290,25 +274,17 @@ header nav a {
     margin: 0 auto;
     flex-direction: column;
     align-items: flex-end;
-
 }
 
-
-
+/*Glemt password-link */
 .psw a {
     text-align: right;
-    color: #EA5045;
+    color: var(--main-dark);
     font-size: 0.9rem;
-
-
-
+    text-decoration: none;
 }
 
-
-
 /*login-knapper*/
-
-
 #container_login {
     display: flex;
     flex-direction: column;
@@ -318,19 +294,11 @@ header nav a {
     margin-top: 20vw;
 }
 
-#login hr {
-    border-style: none;
-    width: 4vw;
-    height: 0.5vw;
-    background-color: #DEDCDB;
-    border-radius: 50px;
-    margin-bottom: 4vw;
-}
-
+/*Login-button*/
 .loginbtn {
     border-radius: 50px;
-    background-color: #EA5045;
-    color: #ffffff;
+    background-color: var(--main-dark);
+    color: var(--main-light);
     border-style: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -343,18 +311,15 @@ header nav a {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-
-
-
 }
 
-
+/*facebook button*/
 .facebookbtn {
     border-radius: 50px;
-    background-color: #FAF7F7;
-    color: #EA5045;
+    background-color: var(--main-light);
+    color: var(--main-dark);
     border-style: solid;
-    border-color: #EA5045;
+    border-color: var(--main-dark);
     margin-top: 2vw;
     display: flex;
     justify-content: space-around;
@@ -367,14 +332,15 @@ header nav a {
     width: 65vw;
     height: 10vw;
     text-decoration: none;
-
 }
 
+/*text facebookbutton*/
 #login .txt {
     margin: 0 auto;
     position: relative;
 }
 
+/*logo facebook*/
 .fblogo {
     background-image: url(svg/fb.svg);
     width: 3vw;
@@ -382,16 +348,13 @@ header nav a {
     background-size: cover;
 }
 
-
+/*remember me tekst + checkbox*/
 .rmb {
     text-align: right;
-    color: #707070;
+    color: var(--grey);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
-
 }
-
-
 
 /********FORGOT PASSWORD***********/
 
@@ -399,30 +362,9 @@ header nav a {
     display: flex;
     flex-direction: column;
     font-family: 'arial', sans-serif;
-
-
-}
-
-/*header login*/
-
-#forgot header {
-    background-color: #EA5045;
-    width: 100vw;
-    height: 35vw;
-    display: flex;
-    align-items: center;
-}
-
-.logo_login {
-    background-image: url(svg/logo.svg);
-    width: 25vw;
-    height: 6.3vw;
-    background-size: cover;
-    margin: 0 auto;
 }
 
 /*inputfelter*/
-
 #forgot_form {
     display: flex;
     flex-direction: column;
@@ -430,55 +372,7 @@ header nav a {
     align-items: center;
 }
 
-
-
-.inputbox {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    margin: 0 auto;
-    margin-top: 10vw;
-
-}
-
-.inputbox input {
-    border-radius: 50px;
-    border-color: #EA5045;
-    padding: 5vw;
-    margin: vw;
-    border-style: none;
-    background-color: white;
-    width: 65vw;
-    height: 7vw;
-    color: #EA5045;
-
-
-}
-
-
-::placeholder {
-    /* Firefox, Chrome, Opera */
-    color: #EA5045;
-    font-weight: bold;
-}
-
-:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #EA5045;
-}
-
-::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: #EA5045;
-    font-weight: bold;
-}
-
-
-
 /*login-knapper*/
-
-
 #container_forgot {
     display: flex;
     flex-direction: column;
@@ -488,19 +382,11 @@ header nav a {
     margin-top: 10vw;
 }
 
-#forgot hr {
-    border-style: none;
-    width: 4vw;
-    height: 0.5vw;
-    background-color: #DEDCDB;
-    border-radius: 50px;
-    margin-bottom: 4vw;
-}
-
+/*submitbutton*/
 #submitbtn {
     border-radius: 50px;
-    background-color: #EA5045;
-    color: #ffffff;
+    background-color: var(--main-dark);
+    color: var(--main-light);
     border-style: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -511,13 +397,12 @@ header nav a {
     height: 10vw;
 }
 
-
+/*backbutton*/
 .backbtn {
     border-radius: 50px;
-    background-color: #FAF7F7;
-    color: #EA5045;
+    background-color: var(--bg);
+    color: var(--main-dark);
     border-style: solid;
-    border-color: #EA5045;
     margin-top: 2vw;
     display: flex;
     justify-content: center;
@@ -530,20 +415,22 @@ header nav a {
     width: 65vw;
     height: 10vw;
     text-decoration: none;
-
 }
 
+/*text backbutton*/
 #forgot .txt {
     margin: 0 auto;
     position: relative;
 }
 
+/*overskrift*/
 #forgot h1 {
     color: #F58E81;
     font-family: 'arial', sans-serif;
     margin-top: 4rem;
 }
 
+/*text*/
 #forgot p {
     text-align: center;
     padding-left: 1rem;
@@ -552,52 +439,41 @@ header nav a {
 }
 
 /*********************FRONT PAGE************************/
-
+/*forside flex*/
 #frontpage {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
     align-items: center;
-    margin: 14vw auto;
+    margin: 14vw auto 1vw;
 }
 
-.box {
-
-    /* width: 29vw;
-    height: 29vw;
-    margin: 0.4rem;*/
-
-
-}
-
+/*rækker*/
 .row {
     display: flex;
     width: 100vw;
     justify-content: center;
-
-
-
 }
 
+/*link-boxe*/
 .col {
     position: relative;
     margin: 5px;
-    background-color: #ffffff;
+    background-color: var(--main-light);
     height: 29vw;
     width: 29vw;
 }
 
-
+/*text til box*/
 #frontpage .text {
     font-family: 'canada-type-gibson', sans-serif;
-    color: #F58E81;
+    color: var(--main-color);
     font-weight: 600;
     margin: 0 auto;
-
 }
 
-
+/*imgage i box*/
 img {
     width: 10vw;
     height: 10vw;
@@ -605,7 +481,7 @@ img {
     margin-bottom: 1rem;
 }
 
-
+/*placering af text og billeder i box*/
 #materialer,
 #skema,
 #notifikationer,
@@ -622,9 +498,9 @@ img {
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    cursor: pointer;
 }
 
+/*hover effekt på box*/
 #materialer:hover,
 #skema:hover,
 #notifikationer:hover,
@@ -634,18 +510,24 @@ img {
 #grupper:hover,
 #chat:hover,
 #soeg:hover,
-#afleveringer:hover,
 #aktuelt:hover,
 #x1:hover,
 #x2:hover,
 #x3:hover {
-    background-color: #DEDCDB;
+    background-color: var(--light-grey);
+    cursor: auto;
 }
 
+/*box aktiv*/
+#afleveringer:active {
+    background-color: var(--light-grey);
+}
+
+/*techloungebox*/
 #techlounge {
     position: relative;
     margin: 5px;
-    background-color: #ffffff;
+    background-color: var(--main-light);
     width: calc(58vw + 10px);
     font-size: 3rem;
     display: flex;
@@ -653,24 +535,23 @@ img {
     align-items: center;
 }
 
+/*message image*/
 #chat img {
-    width: 10vw;
-    height: 7vw;
+    width: 5vw;
+    height: 3.5vw;
     margin: 0 auto;
     margin-bottom: 1rem;
-
 }
-
 
 .row1 {
     display: flex;
 }
 
-
+/*aktuelt box*/
 #aktuelt {
     width: calc(58vw + 10px);
     height: calc(58vw + 10px);
-    background-color: #ffffff;
+    background-color: var(--main-light);
     margin: 5px;
     font-size: 3rem;
     display: flex;
@@ -680,62 +561,53 @@ img {
 
 #soeg {
     margin-bottom: 10px;
-
 }
 
-#afleveringer {}
-
+/*hover aflevering*/
+#afleveringer:hover {
+    cursor: pointer;
+    background-color: var(--light-grey);
+}
 
 #frontpage a {
     text-decoration: none;
 }
 
-/*#techlounge {
-    flex-grow: 2;
-    background-color: #ffffff;
-    width: 58vw;
-    height: 29vw;
-    margin: 0.4rem;
-    flex-basis: 334;
-
-
-}*/
-
 /*************************** AFLEVERINGER ********************/
-
+/*background til afleveringer*/
 #afleveringer-page {
-    background-color: #ffffff;
-
+    background-color: var(--main-light);
 }
 
+/*overskrift*/
 #afleveringer-page h2 {
     font-family: 'canada-type-gibson', sans-serif;
     font-size: 1.3rem;
-    color: #EA5045;
+    color: var(--main-dark);
 }
 
+/*underoverskrift*/
 #afleveringer-page h3 {
     font-family: 'canada-type-gibson', sans-serif;
     font-size: 1rem;
-    color: #000000;
+    color: var(--black);
     font-weight: 600;
 }
 
+/*brødtext*/
 #afleveringer-page p {
     font-family: 'canada-type-gibson', sans-serif;
     font-size: 0.9rem;
     color: #000000;
     font-weight: 500;
-
 }
 
+/*box*/
 .afleverbox {
-    background-color: #F2F1F0;
+    background-color: var(--light-light-grey);
     width: 90vw;
     position: relative;
     margin-bottom: 1rem;
-
-
 }
 
 #upload .afleverbox {
@@ -765,13 +637,21 @@ img {
     background-size: cover;
 }
 
+/*upload button*/
 #uploadbtn {
     background-image: url(svg/upload.svg);
     width: 5vw;
     height: 5vw;
     background-size: cover;
+    background-color: transparent;
+    border: none;
 }
 
+#uploadbtn:hover {
+    cursor: pointer;
+}
+
+/*expand/collapsebox før expand*/
 #previous .outerbox {
     display: flex;
     flex-direction: row;
@@ -780,73 +660,67 @@ img {
     padding: 1rem;
 }
 
+/*expandknap*/
 .expandbtn {
     background-image: url(svg/down_arrow.svg);
     width: 5vw;
     height: 5vw;
     background-size: cover;
+    cursor: pointer;
 }
 
+/*collapsknap*/
 .collapsebtn {
     background-image: url(svg/up_arrow.svg);
     width: 5vw;
     height: 5vw;
     background-size: cover;
-
 }
 
+/*placering af indholdet, når boxen er foldet ud*/
 #previous .collapse {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
+/*styling af boxe i expandboxene*/
 #previous .collapsebox {
     width: 99%;
     background-color: white;
     padding: 1rem;
     margin-bottom: 0.2rem;
-
 }
 
+/*vis ikke indholdet før expand*/
 .collapse-hide {
     display: none;
 }
 
-
-/* The Modal (background) */
+/* modal-vindue (background) */
 .modal {
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    background-color: #FAF7F7;
+    background-color: var(--bg);
     background-color: rgba(0, 0, 0, 0.4);
-
-
 }
 
-/* Modal Content/Box */
+/* Modal indhold */
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--bg);
     margin: 15% auto;
-    /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--light-grey);
     width: 90vw;
-    /* Could be more or less, depending on screen size */
     margin-top: 9rem;
     font-family: 'arial', sans-serif;
-    color: #3F3140;
+    color: var(--purple);
 }
 
 #aflevering-modal {
@@ -861,24 +735,22 @@ img {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-
 }
-
 
 .input input {
     margin-left: 1rem;
     width: 20rem;
     height: 2rem;
     border-radius: 50px;
-    border-style: solid;
-    border-color: #707070;
+    border-style: none;
     border-width: thin;
 }
 
+/*Submit button*/
 .uploadnowbtn {
     border-radius: 50px;
-    background-color: #F58E81;
-    color: #ffffff;
+    background-color: var(--main-color);
+    color: var(--main-light);
     border-style: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -893,18 +765,373 @@ img {
     text-decoration: none;
 }
 
-
-/* The Close Button */
+/* Close Button */
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    color: var(--grey);
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: var(--black);
     text-decoration: none;
     cursor: pointer;
+}
+
+/*-----------------------------------------------------------
+6: Desktop
+------------------------------------------------------------*/
+@media screen and (min-width: 800px) {
+
+    .hidden {
+        transform: translateX(200%)
+    }
+
+    /*Header other pages*/
+    .header {
+        background-color: var(--main-dark);
+        position: fixed;
+        z-index: 500;
+        width: 100vw;
+        height: 6vw;
+        display: flex;
+    }
+
+    #menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-left: 70vw;
+
+    }
+
+    nav #menu {
+        height: 100%;
+        width: 30vw;
+        background-color: var(--purple);
+        display: flex;
+        position: fixed;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: -1;
+        transition: transform .3s;
+        transform-origin: top left;
+    }
+
+    nav a:hover {
+        color: var(--pink);
+    }
+
+    #logo_menu {
+        background-image: url(svg/logo.svg);
+        width: 20vw;
+        height: 5.1vw;
+        margin-bottom: 3rem;
+        background-size: cover;
+        margin-top: 3rem;
+    }
+
+    #signout {
+        width: 30vw;
+        height: 5vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    /*Header other pages*/
+    .header {
+        height: 3vw;
+    }
+
+    .logo {
+        width: 5vw;
+        height: 1.26vw;
+    }
+
+    #right {
+        justify-content: flex-end;
+        margin-right: 1rem;
+
+    }
+
+    #profile {
+        width: 2vw;
+        height: 2vw;
+        margin-right: 2rem;
+    }
+
+    #menuknap {
+        font-size: 2rem;
+    }
+
+    #logo_menu {
+        width: 10vw;
+        height: 2.55vw;
+    }
+
+
+    /*front page*/
+    #frontpage {
+        margin-top: 5vw;
+    }
+
+    #frontpage-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row {
+        width: 100vw;
+        justify-content: center;
+        flex-basis: 400px;
+    }
+
+    .col {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    img {
+        width: 7.5vw;
+        height: 7.5vw;
+    }
+
+    #techlounge {
+        width: calc(30vw + 10px);
+    }
+
+    #aktuelt {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    #aktuelt:hover {
+        background-color: var(--light-grey);
+    }
+
+    #frontpage a:hover {
+        cursor: pointer;
+        background-color: var(--light-grey);
+    }
+
+    .col1 {
+        flex-direction: row;
+        display: flex;
+    }
+
+    /***********************************************LOGIN**************************/
+
+    #login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #login header {
+        height: 10vw;
+    }
+
+    #logo_login {
+        width: 12.5vw;
+        height: 3.15vw;
+    }
+
+    .inputbox {
+        margin-top: 3vw;
+    }
+
+    .inputbox input {
+        padding: 1vw;
+        margin: 1vw;
+        width: 30vw;
+        height: 4vw;
+
+    }
+
+    /*Glemt password og husk*/
+    .container1 {
+        width: 10vw;
+        margin-left: 20vw;
+    }
+
+    /*Glemt password-link */
+    /*login-knapper*/
+    #container_login {
+        margin-top: 1vw;
+    }
+
+    .loginbtn {
+        padding: 2vw;
+        margin: 1vw;
+        width: 20vw;
+        height: 2vw;
+    }
+
+    .facebookbtn {
+        padding: 2vw;
+        margin: 1vw;
+        width: 20vw;
+        height: 2vw;
+
+    }
+
+    hr {
+        margin-bottom: 1vw;
+    }
+
+    .fblogo {
+        width: 2vw;
+        height: 2vw;
+    }
+
+
+    /********FORGOT PASSWORD***********/
+
+    #forgot {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #forgot header {
+        height: 10vw;
+    }
+
+    /*login-knapper*/
+    #container_forgot {
+        margin-top: 2vw;
+    }
+
+    #submitbtn {
+        margin: 1vw;
+        width: 20vw;
+        height: 5vw;
+    }
+
+    .backbtn {
+        width: 20vw;
+        height: 2vw;
+        margin: 1vw;
+    }
+
+    #forgot p {
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 2rem;
+    }
+
+
+    /*************************** AFLEVERINGER ********************/
+
+
+
+    .afleverbox {
+        background-color: var(--light-light-grey);
+        width: 45vw;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    #afleveringer-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 2rem;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+
+    #afleveringer-section h1 {
+        flex-basis: 1000px;
+    }
+
+
+    #next {
+        flex-basis: 400px;
+    }
+
+    #upload {
+        flex-basis: 200px;
+    }
+
+
+    #clip {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    #uploadbtn {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .expandbtn {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .collapsebtn {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    section #previous {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #previous .afleverbox {
+        flex-basis: 690px;
+
+    }
+
+    #previous h2 {
+        flex-basis: 1000px;
+    }
+
+    #previous .collapse {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Modal indhold */
+    .modal-content {
+        width: 45vw;
+        margin-top: 10rem;
+    }
+
+
+
+    .input input {
+        margin-left: 0;
+        width: 33rem;
+    }
+
+    /*Submit button*/
+    .uploadnowbtn {
+        padding: 1rem;
+        margin: 0rem;
+        width: 10vw;
+        height: 3rem;
+        display: flex;
+    }
+
+    /* Close Button */
+    .close {
+        font-size: 2rem;
+    }
+
 }

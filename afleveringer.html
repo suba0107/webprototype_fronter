@@ -14,7 +14,7 @@
     <header>
         <div class="header">
             <a href="frontpage.html">
-                <div id="logo">
+                <div class="logo">
                 </div>
             </a>
             <div id="right">
@@ -26,15 +26,17 @@
 
                         <div id="menu" class="hidden">
                             <div id="menu-nav">
-                                <div class="logo_menu"></div>
+                                <div id="logo_menu"></div>
                                 <a href="#">Akuelt</a>
-                                <a href="skema.html">Skema</a>
+                                <a href="#">Skema</a>
                                 <a href="afleveringer.html">Afleveringer</a>
-                                <a href="materialer.html">Materialer</a>
+                                <a href="#">Materialer</a>
                                 <a href="#">Chat</a>
                                 <a href="#">Instillinger</a>
                             </div>
-                            <div id="signout">Sign out</div>
+
+                            <a id="signout">Sign out</a>
+
                         </div>
 
                     </nav>
@@ -46,7 +48,6 @@
 
 
     <section id="afleveringer-section">
-        <h1>Afleveringer</h1>
         <section id="next">
             <h2>Næste aflevering</h2>
             <div class="afleverbox">
@@ -68,7 +69,8 @@
                     <div id="myModal" class="modal collapse-hide">
                         <div id="modal-indhold" class="modal-content">
                             <div id="closebtn" class="close">&times;</div>
-                            <h1>04.02.01 - Webprototype</h1>
+                            <h1 id="overskrift">04.02.01 - Webprototype</h1>
+                            <p id="p-succeed"></p>
                             <form id="aflevering-modal">
                                 <div class="navn input-aflevering">
                                     <p>Navn*:</p>
@@ -96,7 +98,7 @@
 
                                     </div>
                                 </div>
-                                <button type="button" id="send" class="uploadnowbtn">Upload</button>
+                                <button type="button" id="send" class="uploadnowbtn">Submit</button>
                             </form>
                         </div>
 
